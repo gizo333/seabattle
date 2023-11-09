@@ -2,9 +2,8 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import "./register.css"
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Sidebar from "../component/sidbar";
-import { handleCheckToken } from "../server/view_token";
 
 
 
@@ -59,14 +58,6 @@ const Register = () => {
         }
     };
 
-    useEffect(() => {
-        const isTokenValid = handleCheckToken();
-        if (isTokenValid) {
-            console.log("Токен действителен.");
-        } else {
-            console.log("Токен истек или отсутствует.");
-        }
-    }, []);
 
     return (
 
