@@ -1,0 +1,150 @@
+
+
+@keyframes pulsate {
+  0% {
+      background-color: transparent;
+  }
+  50% {
+      background-color: lightblue;
+  }
+  100% {
+      background-color: transparent;
+  }
+}
+
+.pulsating-cell {
+  animation: pulsate 1s infinite;
+}
+
+.main_container {
+    display: flex;
+  }
+  
+  .main_content {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(248, 232, 232); 
+  }
+  
+  .game-boards-container {
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+    
+    
+  }
+  
+  .game-board {
+    width: 300px; 
+    border: 1px solid #000;
+    margin: 10px;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .cell {
+    width: 30px; 
+    height: 30px; 
+    border: 1px solid #000; 
+    margin: 1px; /* Отступ между клетками */
+  }
+  
+  .cell.occupied {
+    background-color: #3498db; /* Цвет занятых клеток */
+  }
+
+  .cell.enemycell{
+    background-color: white;
+  }
+
+  .cell.missed{
+    background-color: red;
+  }
+
+  .cell.attacked{
+    background-color: black;
+  }
+
+  
+  .ship-selection-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+  }
+  
+  .ship-selection {
+    display: flex;
+    
+  }
+
+ 
+.ship-selection-head ul li {
+  list-style-type: none;
+}
+
+  
+  .button-start {
+    width: 100px;
+    height: 30px;
+    margin: 0 0 20px 20px;
+  }
+  
+
+  .select-name-ship{
+    height: 22px;
+    width: 20%;
+    margin-left: 30px;
+
+  }
+
+  
+  
+
+.ship-one-icon{
+  height: 50px;
+  width: 100px;
+  margin-left: 100px;
+  cursor: pointer;
+}
+
+.ship-one-icon:hover {
+  transform: scale(1.2); 
+  transition: transform 0.2s; 
+}
+.ship-two-icon:hover {
+  transform: scale(1.2); 
+  transition: transform 0.2s; 
+}
+.ship-three-icon:hover {
+  transform: scale(1.2); 
+  transition: transform 0.2s; 
+}
+.ship-four-icon:hover {
+  transform: scale(1.2); 
+  transition: transform 0.2s; 
+}
+
+
+.ship-two-icon{
+  height: 70px;
+  width: 120px;
+  margin-left: 100px;
+  cursor: pointer;
+}
+
+.ship-three-icon{
+  height: 80px;
+  width: 160px;
+  margin-left: 100px;
+  cursor: pointer;
+}
+
+.ship-four-icon{
+  height: 90px;
+  width: 180px;
+  margin-left: 100px;
+  cursor: pointer;
+}

@@ -1,0 +1,237 @@
+:root {
+    --bg-sidebar: rgb(20, 25, 53);
+  }
+  
+  
+  
+  .sidebar {
+      position: relative;
+      width: 250px;
+      
+      background-color: var(--bg-sidebar);
+     
+  
+  }
+  
+  .link.active-link span {
+    color: red !important;
+  }
+  
+  
+  
+  .link {
+    text-decoration: none;  
+    color: inherit;         
+    outline: none;         
+  }
+  
+  
+  .logo_ship {
+      width: 100px;  
+      height: auto;
+      margin-left: 30px;
+  }
+  .footer {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .logo_exit{
+      width: 40px;  
+      height: auto;
+      margin-left: 30px;
+      cursor: pointer;
+  }
+  
+  .menu_nav{
+    height: auto;
+    width: 31px;
+    margin-left: 20px;
+  }
+  
+  
+  
+  .logo_home{
+      display: inline-block;
+      vertical-align: middle;
+      width: 30px;
+      margin-bottom: 2px;
+      margin-left: -15px;
+      padding-right: 10px;
+  }
+  
+  
+  
+  
+  .sidebar::before,
+  .sidebar::after {
+    content: "";
+    background-color: var(--bg-sidebar);
+    width: 100vw;
+    height: 15px;
+    position: absolute;
+    z-index: 100;
+  }
+  
+  .sidebar::before {
+    top: -15px;
+    
+  }
+  
+  .sidebar::after {
+    bottom: -15px;
+  }
+  
+  .sidebar-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: -20px;
+      padding: 10px;
+      background-color: var(--bg-sidebar);
+      color: rgba(239,240,242,255);
+      border-bottom: 1px solid rgba(110, 110, 110, 0.3);
+     
+      
+  }
+  
+  
+  
+  .text-container{
+      display: flex;
+      flex-direction: column;
+  }
+  .sidebar-header h3{
+      margin-bottom: 5px;
+      color: wheat;
+  }
+  .sidebar-header p{
+      margin-top: 5px;
+      white-space: nowrap; /* не переносит текст на новую строку */
+      color: rgba(123,130,147,255);
+  }
+  
+  .list-group-item {
+      font-size: 16px;
+      margin-bottom: 20px;
+      white-space: nowrap;
+      list-style-type: none ;
+      cursor: pointer;
+      color: rgb(154, 153, 153);
+      margin-top: 10px;
+      padding-left: 20px;
+  }
+  .list-group{
+      margin-left: -40px;
+  }
+  
+  .list-group-item:hover {
+      background-color: rgb(38, 60, 67);
+      border-radius: 6px;
+      height: auto;
+      width: 80%;
+      padding-left: 20px;
+      
+  }
+  
+  @media (max-width: 2000px) {
+    .menu_nav{
+      display: none;
+    }
+  
+  }
+  
+  @media (max-width: 600px) {
+      .sidebar {
+        width: 150px;
+      }
+    
+      .text-container h3, .text-container p {
+        font-size: 12px; /* уменьшаем размер шрифта для маленьких экранов */
+      }
+  
+      .list-group-item {
+          font-size: 12px;
+      }
+  
+      .list-group{
+          margin-left: -50px;
+      }
+      
+      .logo_ship {
+        width: 60px; 
+        height: auto; 
+      }
+      
+    }
+  
+    @media (max-width: 480px) {
+      .sidebar {
+        width: 130px;
+       
+      }
+    
+      .text-container h3, .text-container p {
+        font-size: 10px; 
+        margin-left: -5px;
+      }
+     
+      .logo_ship {
+        width: 40px; 
+        height: auto;
+      }
+  
+      .list-group{
+          margin-left: -50px;
+      }
+  
+      .list-group-item{
+        font-size: 11px;
+      }
+  
+      .list-group-item span{
+        
+        margin-left:  -7px;
+    }
+    }
+  
+  @media (max-width: 400px) {
+      .logo_ship {
+        display: none; 
+      }
+  
+      .sidebar {
+          width: 50px;
+        }
+  
+        .list-group-item span{
+          display: none ;
+          
+        }
+  
+        .list-group-item{
+          margin-left: 7px;
+        }
+  
+        .text-container{
+          display: none;
+        }
+        .menu_nav{
+          display: block ;
+        }
+
+        .logo_exit{
+          width: 30px;
+          height: auto;
+          margin-left: -5px;
+        }
+    }
+    
