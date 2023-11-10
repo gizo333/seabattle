@@ -1,0 +1,14 @@
+.wrapper{
+    padding-top: 15px;
+  display: flex;
+  position: relative;
+  background-color: rgb(20, 25, 53);
+}
+
+.container-wrapper{
+  background-color: #eef5f6;
+  width: 100%;
+  height: 100vh;
+  padding-left: 10px;
+  border-radius: 20px;
+}

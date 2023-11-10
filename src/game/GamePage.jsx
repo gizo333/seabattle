@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './gamePage.css';
 import Sidebar from '../component/sidbar';
 import ShipSelection from '../component/selectShip'
+import  {updateScoreOnServer}  from '../requests/updateScore'
+import  {updateScoreFail}  from '../requests/updateScore'
+
 
 function GameBoard({ selectedShip, selectedShipQuantities, updateShipQuantities, maxShipQuantities, enemyIs,rows, cols, isGameStarted,board,attackEnemy,ships,setShips }) {
     let [startCell, setStartCell] = useState(0)
@@ -166,9 +169,7 @@ function Game() {
                 if (attackedShip && isShipDestroyed(attackedShip, enemyBoard)) {
                     setEnemyScore(enemyScore - 1);
                     console.log('Enemy ship destroyed!');
-                    if (enemyScore === 0) {
-                        console.log('You win!');
-                    }
+                    
                 }
                 areYouAttacked = true;
             } else {
@@ -184,9 +185,27 @@ function Game() {
                     enemyTurn();
                 }, 10);
             }
-            if (playerScore === 0) {
-                console.log('You lose!');
-            }
+            
+        }
+        checkGameStatus();
+    }
+
+   
+    
+
+// проверка на оставшиеся корабли
+    function checkGameStatus() {
+        const remainingEnemyShips = enemyShips.filter((ship) => !isShipDestroyed(ship, enemyBoard));
+        const remainingPlayerShips = ships.filter((ship) => !isShipDestroyed(ship, board));
+    
+        if (remainingEnemyShips.length === 0) {
+            alert(' You win!'); 
+            updateScoreOnServer();
+        }
+    
+        if (remainingPlayerShips.length === 0) {
+            alert('Game over! You lose!');
+            updateScoreFail();
         }
     }
     
